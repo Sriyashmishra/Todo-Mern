@@ -1,0 +1,67 @@
+/* Background container - matches signup for consistency */
+.signin-container {
+    min-height: 90vh;
+    background-color: black;
+    padding: 20px;
+}
+
+/* Centered card with depth */
+.signin-card {
+    background-color: #ffffff;
+    border-radius: 15px;
+    border: none;
+    transition: transform 0.3s ease;
+}
+
+/* Card Heading */
+.signin-card h2 {
+    color: #2c3e50;
+    font-weight: 700;
+}
+
+/* Form labels */
+.form-label {
+    font-weight: 600;
+    color: #2d3436;
+    font-size: 0.9rem;
+}
+
+/* Input field styling */
+.form-control {
+    border-radius: 8px;
+    padding: 12px;
+    border: 1px solid #dfe6e9;
+}
+
+.form-control:focus {
+    box-shadow: none;
+    border-color: #20c997; /* Your theme green */
+}
+
+/* Sign In Button - Matches the Navbar buttons */
+.btn-signin {
+    background-color: #ff4757; /* Your theme red */
+    color: white;
+    font-weight: bold;
+    padding: 12px;
+    border-radius: 8px;
+    border: none;
+    transition: 0.3s ease;
+}
+
+.btn-signin:hover {
+    background-color: #e84118;
+    transform: translateY(-2px);
+}
+
+/* Link back to Signup */
+.signup-link {
+    color: #20c997;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.signup-link:hover {
+    color: #ff4757;
+    text-decoration: underline;
+}

@@ -1,0 +1,23 @@
+.about {
+  min-height: 100vh;
+  padding: 80px 20px;
+  background-color: #ffffff;
+  display: flex;
+  justify-content: center;
+}
+
+.about-container {
+  max-width: 900px;
+  color: #111827; /* DARK TEXT */
+}
+
+.about-container h1 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+}
+
+.about-container p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: #374151; /* readable gray */
+}

@@ -1,0 +1,74 @@
+/* Main background */
+.todo-container {
+    min-height: 100vh;
+    max-height: auto;
+    background-color: #f0f2f5; /* Light gray background for contrast */
+}
+
+/* --- Input Card Styling --- */ 
+.todo-card {
+    border: none;
+}
+
+/* Input fields styling */
+.todo-input {
+    border: 2px solid #e9ecef;
+    border-radius: 10px;
+    outline: none;
+    font-size: 16px;
+    transition: all 0.3s ease;
+}
+
+/* Highlight input on focus with your theme green */
+.todo-input:focus {
+    border-color: #20c997; 
+    box-shadow: 0 0 0 0.2rem rgba(32, 201, 151, 0.25);
+}
+
+.body-input {
+    min-height: 120px; /* Taller area for body text */
+    resize: none; /* Prevents breaking layout */
+}
+
+/* Add Task Button - Matching your theme red */
+.btn-add-task {
+    background-color: #ff4757;
+    color: white;
+    font-weight: 700;
+    padding: 12px;
+    border-radius: 10px;
+    border: none;
+    transition: all 0.3s ease;
+}
+
+.btn-add-task:hover {
+    background-color: #e84118;
+    transform: translateY(-2px);
+    color: white;
+}
+
+/* --- Todo Item Boxes at Bottom --- */
+.todo-item-box {
+    border-left: 5px solid #20c997; /* Green accent on the left */
+    transition: transform 0.2s ease;
+}
+
+.todo-item-box:hover {
+    transform: scale(1.01); /* Slight pop effect on hover */
+}
+
+.todo-title {
+    font-weight: 600;
+    color: #2c3e50;
+}
+
+.todo-body {
+    font-size: 0.95rem;
+    white-space: pre-wrap; /* Preserves line breaks typed in textarea */
+}
+
+/* Action buttons styling */
+.todo-actions .btn {
+    border-radius: 8px;
+    padding: 5px 12px;
+}

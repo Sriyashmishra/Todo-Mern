@@ -1,0 +1,71 @@
+/* The main background container */
+
+.signup-container {
+    min-height: 90vh; /* Takes up most of the screen height */
+    background-color: black; /* A very light gray for contrast */
+    padding: 10px;
+}
+
+/* The white card holding the form */
+.signup-card {
+    background-color: #ffffff;
+    border-radius: 20px; /* Rounded corners */
+    border: none;
+}
+
+/* Heading style */
+.signup-card h2 {
+    color: #2c3e50;
+    font-weight: 700;
+}
+
+/* Labels for inputs */
+.form-label {
+    font-weight: 600;
+    color: #2d3436;
+    font-size: 0.9rem;
+}
+
+/* Input fields */
+.form-control {
+    border-radius: 8px;
+    padding: 12px;
+    border: 1px solid #dfe6e9;
+    background-color: #fcfcfc;
+}
+
+.form-control:focus {
+    box-shadow: none;
+    border-color: #20c997; /* Highlights green when clicking inside */
+}
+
+/* The main Sign Up button (matches your theme red) */
+.btn-signup {
+    background-color: #ff4757;
+    color: white;
+    font-weight: bold;
+    padding: 12px;
+    border-radius: 8px;
+    border: none;
+    transition: 0.3s ease;
+}
+
+.btn-signup:hover {
+    background-color: #e84118;
+    transform: translateY(-2px); /* Slight lift effect */
+}
+
+/* The link at the bottom */
+.signin-link {
+    color: #20c997;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.signin-link:hover {
+    text-decoration: underline;
+    color: #ff4757;
+}
+.text-center{
+    color:rgb(27, 5, 5)
+}

@@ -1,0 +1,167 @@
+/* --- General Navbar Styling --- */
+.navbar {
+  background-color: #CFFFE2 !important;
+  height: 90px !important;
+  display: flex !important;   
+  align-items: center !important;
+  transition: all 0.3s ease;
+  z-index: 1000;
+}
+
+/* --- Brand Logo Hover Animation --- */
+.navbar-brand {
+  margin-right: auto !important;
+  font-size: 28px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  transition: transform 0.3s ease, color 0.3s ease;
+  text-decoration: none !important;
+  color: black !important;
+}
+
+.navbar-brand:hover {
+  transform: scale(1.05); /* Slight pop effect */
+  color: #20c997 !important; /* Professional theme green tint */
+}
+
+.todo-icon {
+  transition: transform 0.5s ease;
+}
+
+.navbar-brand:hover .todo-icon {
+  transform: rotate(360deg); /* Icon spins on hover */
+}
+
+/* --- Link Styling --- */
+.click {
+    color: black;
+    text-decoration: none !important;
+    margin: 10px;
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+/* Professional Underline Animation on Hover */
+.click::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -5px;
+    left: 0;
+    background-color: #0b0c08;
+    transition: width 0.3s ease;
+}
+
+.click:hover::after {
+    width: 100%;
+}
+
+.navbar-nav {
+  gap: 10px !important;
+}
+
+/* --- Button Styling --- */
+.btn-nav {
+  background-color: #0b0c08;
+  color: white;
+  padding: 10px 20px !important;
+  font-size: 1rem !important;
+  border-radius: 30px !important;
+  border: none !important;
+  cursor: pointer !important;
+  transition: all 0.3s ease !important;
+  text-decoration: none !important;
+}
+
+.btn-nav:hover {
+    background-color: #333;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+/* --- Container Layout --- */
+.navbar .container {
+    max-width: 100% !important;
+    display: flex !important;
+    justify-content: space-evenly;
+    padding: 0 50px !important;
+}
+
+/* --- Mobile Sidebar Overlay & Animation --- */
+@media (max-width: 991px) {
+    .navbar-collapse {
+        background-color: #ffffff !important;
+        position: absolute; 
+        top: 100%; 
+        left: 0;
+        width: 100%;
+        z-index: 1050;
+        padding: 30px 20px;
+        box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+        border-radius: 0 0 20px 20px;
+        
+        /* Entrance Animation */
+        transform: translateY(-10px);
+        opacity: 0;
+        transition: all 0.4s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+        pointer-events: none;
+    }
+
+    /* When Bootstrap adds the 'show' class */
+    .navbar-collapse.show {
+        transform: translateY(0);
+        opacity: 1;
+        pointer-events: auto;
+    }
+
+    .nav-item {
+        margin: 20px 0;
+        text-align: center;
+        width: 100%;
+    }
+
+    .nav-link {
+        color: #212529 !important;
+        font-weight: 600;
+        font-size: 1.2rem;
+        transition: color 0.3s ease;
+    }
+
+    .nav-item .btn-nav {
+        width: 70%;
+        margin: 10px auto;
+        display: block;
+    }
+}
+/* --- Desktop Button (Keep as is) --- */
+.btn-nav {
+  background-color: #0b0c08;
+  color: white;
+  padding: 10px 20px !important;
+  border-radius: 30px !important;
+  text-decoration: none !important;
+}
+
+/* --- Mobile Sidebar Specific Fix --- */
+@media (max-width: 991px) {
+    /* Target the SignUp/SignIn buttons inside the collapsed menu */
+    .navbar-collapse .btn-nav {
+        background-color: transparent !important; /* Removes the black background */
+        color: black !important; /* Changes text to black to match other links */
+        padding: 0 !important; /* Removes the button padding */
+        border: none !important; /* Removes any remaining borders */
+        box-shadow: none !important; /* Removes hover shadows */
+        font-weight: 600;
+        font-size: 1.1rem;
+        display: inline-block;
+        width: auto; /* Prevents it from stretching across the screen */
+    }
+
+    /* Professional spacing to match Home and About Us */
+    .nav-item {
+        margin: 15px 0;
+        text-align: center;
+    }
+}

@@ -1,0 +1,104 @@
+/* Full page layout */
+.home {
+  min-height: 100vh;
+  width: 100%;
+  background-color: #000000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.8s ease;
+}
+
+/* Fade-in animation */
+.home.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Content container */
+.container {
+  max-width: 900px;
+  padding: 40px;
+  text-align: center;
+  color: #ffffff;
+}
+
+.click{
+  text-decoration: none;
+}
+.utt{
+  color:white;
+}
+/* Heading */
+.container h1 {
+  font-size: 3.5rem;
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: 20px;
+}
+
+/* Paragraph */
+.container p {
+  font-size: 1.2rem;
+  color: #d1d5db;
+  margin-bottom: 40px;
+}
+
+/* Buttons wrapper */
+.home-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+/* Button base */
+.btn {
+  padding: 14px 32px;
+  font-size: 1rem;
+  border-radius: 50px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+/* Primary button */
+.btn.primary {
+  background: #22c55e;
+  color: #0f172a;
+}
+
+.btn.primary:hover {
+  background: #16a34a;
+  transform: translateY(-2px);
+}
+
+/* Secondary button */
+.btn.secondary {
+  background: transparent;
+  color: #ffffff;
+  border: 1px solid #ffffff;
+}
+
+.btn.secondary:hover {
+  background: rgba(255, 255, 255, 0.1);
+  transform: translateY(-2px);
+}
+.navbar-nav{
+  gap:15px;
+}
+/* Responsive design */
+@media (max-width: 768px) {
+  .container h1 {
+    font-size: 2.4rem;
+  }
+
+  .container p {
+    font-size: 1rem;
+  }
+
+  .home-buttons {
+    flex-direction: column;
+  }
+}

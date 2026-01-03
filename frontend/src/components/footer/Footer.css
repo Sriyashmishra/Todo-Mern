@@ -1,0 +1,37 @@
+/* --- Footer Styling --- */
+.footer {
+    background-color: #CFFFE2; /* Light grey to contrast with black Home or green Nav */
+    border-top: 1px solid #e0e0e0;
+    width: 100%;
+    margin-top: auto; /* Pushes footer to bottom if using Flexbox on parent */
+}
+
+.footer-brand h5 {
+    color: #20c997; /* Matches your Todo icon theme green */
+    letter-spacing: 1px;
+}
+
+.footer-links span b {
+    color: #212529;
+}
+
+/* --- Layout Fix for App.js --- */
+/* Apply this to your main App container to keep footer at the bottom */
+.app-wrapper {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.main-content {
+    flex: 1; /* This ensures the content pushes the footer down */
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    .footer .container {
+        flex-direction: column;
+        text-align: center;
+        gap: 10px;
+    }
+}

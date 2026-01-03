@@ -1,0 +1,11 @@
+.app-container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Keeps footer at bottom */
+}
+
+.main-content {
+    flex: 1; 
+    /* Ensures content doesn't get hidden behind a sticky navbar */
+    padding-top: 70px; 
+}
