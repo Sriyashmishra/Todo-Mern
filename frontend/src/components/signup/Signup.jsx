@@ -12,8 +12,9 @@ const Signup = () => {
     password: "",
   });
 
-  // Updated the base URL to point to your backend port
-  const BASE_URL = "http://localhost:1000/api/v1";
+  // --- FIXED FOR DEPLOYMENT ---
+  // We removed "http://localhost:1000". Now it uses the current domain on Render.
+  const BASE_URL = "/api/v1"; 
 
   const change = (e) => {
     const { name, value } = e.target;
@@ -23,7 +24,7 @@ const Signup = () => {
   const submit = async (e) => {
     e.preventDefault();
     try {
-      // Changed window.location.origin to BASE_URL (Port 1000)
+      // This will now correctly call https://your-app.onrender.com/api/v1/register
       const response = await axios.post(`${BASE_URL}/register`, Inputs);
       
       if (response.data.message === "User already exists") {
@@ -41,7 +42,8 @@ const Signup = () => {
       if (error.response) {
         alert(error.response.data.message);
       } else {
-        alert("Something went wrong. Please check if the server is running.");
+        // Updated error message to be more helpful for production
+        alert("Server error. Please try again later.");
       }
     }
   };

@@ -11,10 +11,12 @@ const Todo = () => {
   const [todoList, setTodoList] = useState([]);
   const [editId, setEditId] = useState(null);
 
-  // Backend Base URL
-  const BASE_URL = "http://localhost:1000/api/v2";
+  // --- FIXED FOR DEPLOYMENT ---
+  // We removed "http://localhost:1000". 
+  // This relative path tells the browser to use the current domain (Render).
+  const BASE_URL = "/api/v2"; 
 
-  // Retrieve User ID safely
+  // Retrieve User ID safely from session storage
   const id = sessionStorage.getItem("id");
 
   // --- FETCH TASKS ON LOAD ---
@@ -22,6 +24,7 @@ const Todo = () => {
     const fetchTasks = async () => {
       if (id) {
         try {
+          // This will now call https://your-app.onrender.com/api/v2/getTasks/...
           const res = await axios.get(`${BASE_URL}/getTasks/${id}`);
           if (res.data.list) {
             setTodoList(res.data.list);
@@ -32,7 +35,7 @@ const Todo = () => {
       }
     };
     fetchTasks();
-  }, [id]);
+  }, [id, BASE_URL]);
 
   // --- SUBMIT / UPDATE LOGIC ---
   const submitTodo = async () => {
@@ -43,7 +46,7 @@ const Todo = () => {
 
     if (id) {
       if (editId) {
-        // 🔄 UPDATE TASK
+        // 🔄 UPDATE EXISTING TASK
         try {
           await axios.put(`${BASE_URL}/UpdateTask/${editId}`, {
             title,
@@ -74,7 +77,7 @@ const Todo = () => {
         }
       }
     } else {
-      // 👤 GUEST MODE
+      // 👤 GUEST MODE (Not logged in)
       const newTodo = { title, body, _id: Date.now() };
       setTodoList([...todoList, newTodo]);
       toast.error("Task Not Saved! Please Signin");
@@ -94,7 +97,7 @@ const Todo = () => {
     if (isConfirmed) {
       if (id) {
         try {
-          // Sending the user 'id' in the 'data' body as required by your backend logic
+          // Sending the user 'id' in the 'data' body as required by the backend
           await axios.delete(`${BASE_URL}/DeleteTask/${taskId}`, {
             data: { id: id },
           });

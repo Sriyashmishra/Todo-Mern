@@ -13,8 +13,10 @@ const Signin = () => {
     password: "",
   });
 
-  // Base URL for Backend API
-  const BASE_URL = "http://localhost:1000/api/v1";
+  // --- FIXED FOR DEPLOYMENT ---
+  // We removed "http://localhost:1000".
+  // This tells the browser to use the domain where the app is hosted (Render).
+  const BASE_URL = "/api/v1"; 
 
   const change = (e) => {
     const { name, value } = e.target;
@@ -24,7 +26,7 @@ const Signin = () => {
   const submit = async (e) => {
     e.preventDefault();
     try {
-      // Changed window.location.origin to BASE_URL
+      // This will now call https://your-app.onrender.com/api/v1/signin
       const response = await axios.post(`${BASE_URL}/signin`, Inputs);
 
       if (response.data.user && response.data.user._id) {
@@ -45,9 +47,8 @@ const Signin = () => {
         // Backend returned an error like "User not found" or "Wrong password"
         alert(error.response.data.message || "Invalid Credentials");
       } else {
-        alert(
-          "Server is unreachable. Please ensure it is running on port 1000."
-        );
+        // Updated for production: User shouldn't see "port 1000" errors anymore
+        alert("Server error. Please try again later.");
       }
     }
   };
